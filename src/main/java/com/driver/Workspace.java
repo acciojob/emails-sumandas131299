@@ -42,7 +42,7 @@ public class Workspace extends Gmail{
         if(!endtimes.isEmpty()) cnt++;
 
         for(int i=1;i<endtimes.size();i++){
-            if(this.calendar.get(endtimes.get(i).getValue()).getStartTime().compareTo(limit) > 0 ) {
+            if(this.calendar.get(endtimes.get(i).getValue()).getStartTime().isAfter(limit)) {
                 cnt++;
                 limit = endtimes.get(i).getKey();
             }
